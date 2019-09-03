@@ -1,0 +1,18 @@
+<div class="alert alert-danger"
+     *ngIf="items?.length === 0">
+  <!--Have to wait until the array is loaded before check length -->
+  <!-- ?. is called the Elvis operator. It only checks if object isn't null -->
+  Your List is Empty! Please add some things!
+</div>
+<ul class="list-unstyled">
+  <li class="alert"
+      [ngClass]="{ 'alert-info': !item.completed, 'alert-success': item.completed}"
+      *ngFor="let item of items">
+    <span [ngClass]="{'done': item.completed}">{{ item.description }}</span>
+    <input type="button"
+           *ngIf="!item.completed"
+           (click)="markComplete(item)"
+           class="btn btn-sm btn-danger"
+           value="x">
+  </li>
+</ul>
