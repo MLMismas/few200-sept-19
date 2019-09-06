@@ -14,6 +14,7 @@ import { reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './effects/counter.effects';
 import { WatchlistModule } from './features/watchlist/watchlist.module';
+import { BooklistModule } from './features/booklist/booklist.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { WatchlistModule } from './features/watchlist/watchlist.module';
     AppRoutingModule,
     TodoModule,
     WatchlistModule,
+    BooklistModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([CounterEffects])
